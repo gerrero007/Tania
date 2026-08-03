@@ -1,0 +1,415 @@
+/* =========================================================================
+   COMMON.CSS — Sistema de diseño compartido
+   Web de parejas · basado en los bocetos: Índice, Estadísticas, Viajes,
+   Celebraciones, Cartas, Música, Álbum, Regalo / Copia de Regalo
+   =========================================================================
+   Cómo usarlo: enlaza este archivo en TODAS las páginas, antes del CSS
+   propio de cada una:
+   <link rel="stylesheet" href="common.css">
+   <link rel="stylesheet" href="pagina-especifica.css">
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* -------------------------------------------------------------------------
+   1. TOKENS (variables de diseño)
+   ------------------------------------------------------------------------- */
+:root {
+  /* Paleta — tomada directamente de los bocetos */
+  --color-bg:            #f2f2f2;   /* fondo general de la página */
+  --color-lavender:      #eaccff;   /* tarjeta / superficie lila clara */
+  --color-lavender-dark: #d9adf7;   /* variante lila un poco más saturada (hover/borde) */
+  --color-header:        #2b2b2b;   /* barra superior oscura (header / móvil) */
+  --color-blue:          #649ef0;   /* botones primarios */
+  --color-blue-dark:     #4a86dc;   /* hover / active de botones azules */
+  --color-orange:        #fca04d;   /* bloque de tabla / destacado (Cartas) */
+  --color-white:         #ffffff;
+  --color-text:          #2f2a3a;   /* texto principal sobre lila/blanco */
+  --color-text-soft:     #6b6478;   /* texto secundario / subtítulos */
+  --color-text-onblue:   #ffffff;
+  --color-text-onheader: #cfd8ff;   /* texto azulado sobre el header oscuro */
+  --color-placeholder:   #b8a9cc;   /* líneas de texto simuladas */
+  --color-border:        #a68fc9;   /* bordes de cajas/inputs sobre lila */
+
+  /* Tipografía */
+  --font-display: 'Baloo 2', 'Comic Sans MS', sans-serif;  /* títulos: divertida y redondeada */
+  --font-body:    'Nunito', 'Comic Sans MS', sans-serif;   /* texto: redondeada, legible */
+
+  /* Radios */
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-pill: 999px;
+
+  /* Espaciados FLUIDOS — escalan con el ancho de la ventana (clamp: mínimo, preferido en vw, máximo)
+     así el diseño crece/decrece de forma continua en vez de saltar solo en el breakpoint móvil. */
+  --space-1: clamp(3px,  0.25vw + 2px,  6px);
+  --space-2: clamp(6px,  0.5vw  + 3px,  11px);
+  --space-3: clamp(9px,  0.7vw  + 5px,  16px);
+  --space-4: clamp(12px, 1vw    + 6px,  22px);
+  --space-5: clamp(18px, 1.4vw  + 9px,  32px);
+  --space-6: clamp(24px, 2vw    + 12px, 44px);
+  --space-7: clamp(36px, 2.8vw  + 18px, 64px);
+
+  /* Escala tipográfica fluida */
+  --text-xs:  clamp(0.7rem,  0.65rem + 0.2vw,  0.85rem);
+  --text-sm:  clamp(0.8rem,  0.72rem + 0.3vw,  1rem);
+  --text-base:clamp(0.95rem, 0.86rem + 0.35vw, 1.15rem);
+  --text-lg:  clamp(1.1rem,  0.95rem + 0.6vw,  1.5rem);
+  --text-xl:  clamp(1.35rem, 1.1rem  + 1vw,    2rem);
+  --text-2xl: clamp(1.6rem,  1.25rem + 1.6vw,  2.6rem);
+
+  /* Sombras */
+  --shadow-card: 0 4px 14px rgba(90, 60, 120, 0.15);
+  --shadow-btn:  0 3px 0 var(--color-blue-dark);
+
+  /* Anchura móvil (marco de teléfono en los bocetos) */
+  --mobile-width: 320px;
+}
+
+/* -------------------------------------------------------------------------
+   2. RESET BÁSICO
+   ------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+  color: var(--color-text);
+}
+
+p { margin: 0 0 var(--space-3); line-height: 1.5; }
+
+button { font-family: inherit; cursor: pointer; border: none; }
+
+img { max-width: 100%; display: block; }
+
+/* -------------------------------------------------------------------------
+   3. LAYOUT BASE DE PÁGINA
+   ------------------------------------------------------------------------- */
+.page {
+  width: min(90vw, 1400px);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-5);
+}
+
+/* Contenedor lila que envuelve el contenido de cada pantalla
+   (aparece de fondo en Estadísticas, Viajes, Celebraciones, Cartas,
+   Música, Álbum, Regalo, Copia de Regalo…)
+   Ancho fluido: crece con la ventana en vez de quedarse fijo. */
+.screen {
+  width: min(90vw, 1400px);
+  margin: 0 auto;
+  background: var(--color-lavender);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+/* -------------------------------------------------------------------------
+   4. HEADER (barra oscura superior — presente en TODAS las pantallas)
+   ------------------------------------------------------------------------- */
+.app-header {
+  background: var(--color-header);
+  color: var(--color-text-onheader);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: var(--space-2) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header .logo {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-blue);
+}
+
+.app-header .app-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  text-align: center;
+  flex: 1;
+}
+
+/* Título + subtítulo centrado que suele ir justo debajo del header,
+   dentro de la pantalla lila (Estadísticas, Viajes, Celebraciones, Álbum…) */
+.screen-title {
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.screen-title h2 {
+  font-size: var(--text-xl);
+  color: var(--color-blue-dark);
+}
+
+.screen-title p {
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------------------------
+   5. TARJETAS (card) — bloques de contenido reutilizables
+   ------------------------------------------------------------------------- */
+.card {
+  background: var(--color-lavender);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.card + .card { margin-top: var(--space-4); }
+
+/* Variante "hueca" usada como placeholder de imagen/recuerdo dentro de card
+   (Viajes, Celebraciones) */
+.card--outline {
+  background: transparent;
+  border: 2px solid var(--color-border);
+}
+
+/* -------------------------------------------------------------------------
+   6. LÍNEAS DE TEXTO PLACEHOLDER (párrafos simulados en los bocetos)
+   ------------------------------------------------------------------------- */
+.text-line {
+  display: block;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-placeholder);
+  margin-bottom: var(--space-2);
+  opacity: 0.7;
+}
+
+.text-line--short  { width: 40%; }
+.text-line--medium { width: 65%; }
+.text-line--long   { width: 90%; }
+
+/* -------------------------------------------------------------------------
+   7. BOTONES
+   ------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-5);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.btn:active { transform: translateY(2px); }
+
+/* Botón primario azul (Confirmar, navegación del Índice, etc.) */
+.btn-primary {
+  background: var(--color-blue);
+  color: var(--color-text-onblue);
+  box-shadow: var(--shadow-btn);
+}
+.btn-primary:hover { background: var(--color-blue-dark); }
+
+/* Botón grande tipo "Confirmar" (Regalo / Copia de Regalo) */
+.btn-primary--lg {
+  width: 100%;
+  padding: var(--space-5);
+  font-size: var(--text-lg);
+  border-radius: var(--radius-md);
+}
+
+/* Pastillas de navegación pequeñas (Índice: Recuerdos, Viajes, Celebraciones…) */
+.btn-pill {
+  background: var(--color-blue);
+  color: var(--color-text-onblue);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  text-align: center;
+  width: 100%;
+}
+
+/* Grupo de botones en fila (usado bajo Regalo, y en el grid del Índice) */
+.btn-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.btn-row .btn { flex: 1; }
+
+/* -------------------------------------------------------------------------
+   8. CAMPOS / INPUTS (cajas con borde + icono circular)
+   ------------------------------------------------------------------------- */
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-soft);
+}
+
+.input-box .icon-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text-soft);
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------------------
+   9. PLACEHOLDER DE FOTO / RECUERDO (cuadrado con icono central)
+   ------------------------------------------------------------------------- */
+.photo-placeholder {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.photo-placeholder .icon-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+/* etiqueta bajo la miniatura (nombre del recuerdo/foto) */
+.photo-placeholder__label {
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+  right: 8px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Rejilla usada en Álbum (3-4 columnas) */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* -------------------------------------------------------------------------
+   10. BARRAS DE ESTADÍSTICA / PROGRESO (página Estadísticas)
+   ------------------------------------------------------------------------- */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-bar {
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--color-blue);
+  color: var(--color-text-onblue);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-soft);
+}
+
+/* -------------------------------------------------------------------------
+   11. TABLA / BLOQUE DESTACADO NARANJA (página Cartas)
+   ------------------------------------------------------------------------- */
+.highlight-block {
+  background: var(--color-orange);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.highlight-block table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.highlight-block th,
+.highlight-block td {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  text-align: center;
+  border: 1px solid #f0d8b8;
+}
+
+.highlight-block .caption {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+/* -------------------------------------------------------------------------
+   12. MARCO MÓVIL (para previsualizar las pantallas en formato teléfono)
+   ------------------------------------------------------------------------- */
+.mobile-frame {
+  width: var(--mobile-width);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--color-lavender);
+}
+
+.mobile-frame .app-header {
+  border-radius: 0;
+}
+
+.mobile-frame .screen {
+  border-radius: 0;
+  padding: var(--space-4);
+}
+
+/* -------------------------------------------------------------------------
+   13. UTILIDADES
+   ------------------------------------------------------------------------- */
+.text-center { text-align: center; }
+.mt-1 { margin-top: var(--space-1); } .mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); } .mt-4 { margin-top: var(--space-4); }
+.mb-1 { margin-bottom: var(--space-1); } .mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); } .mb-4 { margin-bottom: var(--space-4); }
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
