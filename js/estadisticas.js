@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         actualizarTemporizadores();
     }, 1000);
 
+    actualizarTemporizadores();
+
     function calcularTiempoTranscurrido(fechaInicio) {
         const ahora = new Date();
         const diffMs = ahora - fechaInicio;

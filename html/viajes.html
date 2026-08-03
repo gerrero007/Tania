@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viajes — Notas de relación</title>
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="../styles/viajes.css">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header viajes-mobile-header">
+    <a href="../index.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen viajes-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="../index.html" class="back-btn back-btn--floating viajes-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>Viajes</h2>
+      <p>💙 Aunque todavía no hayamos salido de la isla, nos hemos adentrado en muchas aventuras inolvidables 💙</p>
+    </div>
+
+    <div class="viajes-grid">
+      <a href="el-principio.html" class="trip-card">
+        <img class="trip-card__img" src="../img/14.jpg" alt="El principio">
+        <span class="trip-card__label">El principio</span>
+      </a>
+
+      <a href="el-grupo.html" class="trip-card">
+        <img class="trip-card__img" src="../img/19.jpg" alt="El grupo">
+        <span class="trip-card__label">El grupo</span>
+      </a>
+
+      <a href="el-reinicio.html" class="trip-card">
+        <img class="trip-card__img" src="../img/7.jpg" alt="El reinicio">
+        <span class="trip-card__label">El reinicio</span>
+      </a>
+
+      <a href="la-vida.html" class="trip-card">
+        <img class="trip-card__img" src="../img/23.jpg" alt="La vida">
+        <span class="trip-card__label">La vida</span>
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>
