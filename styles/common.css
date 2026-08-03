@@ -65,6 +65,9 @@
 
   /* Anchura móvil (marco de teléfono en los bocetos) */
   --mobile-width: 320px;
+
+  /* Altura del header fijo en móvil (para compensar con padding-top el contenido) */
+  --header-height: clamp(48px, 7vw, 64px);
 }
 
 /* -------------------------------------------------------------------------
@@ -107,6 +110,7 @@ img { max-width: 100%; display: block; }
    Música, Álbum, Regalo, Copia de Regalo…)
    Ancho fluido: crece con la ventana en vez de quedarse fijo. */
 .screen {
+  position: relative;
   width: min(90vw, 1400px);
   margin: 0 auto;
   background: var(--color-lavender);
@@ -121,6 +125,7 @@ img { max-width: 100%; display: block; }
   background: var(--color-header);
   color: var(--color-text-onheader);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
+  min-height: var(--header-height);
   padding: var(--space-2) var(--space-4);
   display: flex;
   align-items: center;
@@ -139,6 +144,19 @@ img { max-width: 100%; display: block; }
   font-size: var(--text-lg);
   text-align: center;
   flex: 1;
+}
+
+/* En móvil, el header siempre queda fijo arriba y sigue el scroll
+   (comportamiento por defecto para cualquier página que use .app-header) */
+@media (max-width: 640px) {
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-radius: 0;
+  }
 }
 
 /* Título + subtítulo centrado que suele ir justo debajo del header,
@@ -401,7 +419,41 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------------------------------------
-   13. UTILIDADES
+   13. BOTÓN "VOLVER" (flecha atrás — enlaza siempre al índice)
+   ------------------------------------------------------------------------- */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.back-btn__icon {
+  width: clamp(16px, 1.6vw, 22px);
+  height: clamp(16px, 1.6vw, 22px);
+}
+
+/* Variante botón azul flotante, usada en escritorio dentro de la tarjeta lila */
+.back-btn--floating {
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-5);
+  background: var(--color-blue);
+  color: var(--color-text-onblue);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-5);
+  box-shadow: var(--shadow-btn);
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+.back-btn--floating:hover  { background: var(--color-blue-dark); }
+.back-btn--floating:active { transform: translateY(2px); }
+
+/* Variante dentro del header oscuro (móvil): solo el icono, en azul */
+.back-btn--header { color: var(--color-blue); }
+
+/* -------------------------------------------------------------------------
+   14. UTILIDADES
    ------------------------------------------------------------------------- */
 .text-center { text-align: center; }
 .mt-1 { margin-top: var(--space-1); } .mt-2 { margin-top: var(--space-2); }
