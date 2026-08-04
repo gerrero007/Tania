@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El principio — Viajes</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/el-principio.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header principio-mobile-header">
+    <a href="viajes.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen principio-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="viajes.html" class="back-btn back-btn--floating principio-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>El principio</h2>
+    </div>
+
+    <div class="principio-story">
+
+      <div class="story-row">
+        <p class="story-row__text">Por muchas aventuras que hayamos vivido, esta siempre sera de mis favoritas.</p>
+        <img class="story-row__img" src="../img/14.jpg" alt="El principio - recuerdo 1">
+      </div>
+
+      <div class="story-row story-row--reverse">
+        <p class="story-row__text">No nos conocíamos, nunca habíamos hablado, pero sabíamos que era lo que queríamos y nos enfrentamos al futuro sin miedo, juntos.</p>
+        <img class="story-row__img" src="../img/30.jpg" alt="El principio - recuerdo 2">
+      </div>
+
+      <div class="story-row">
+        <p class="story-row__text">Y como si nada empezamos a escribir nuestra propia historia.</p>
+        <img class="story-row__img" src="../img/27.jpg" alt="El principio - recuerdo 3">
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

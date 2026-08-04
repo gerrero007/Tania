@@ -1,0 +1,35 @@
+/* =========================================================================
+   EL-PRINCIPIO.CSS — Página "El principio" (dentro de Viajes)
+   Depende de styles/common.css (variables, .screen, .app-header, .back-btn,
+   .screen-title, .story-row)
+   ========================================================================= */
+
+.principio-screen {
+  width: min(85vw, 1400px);
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-7);
+}
+
+/* En escritorio no se usa el header oscuro, solo la flecha flotante */
+.principio-mobile-header { display: none; }
+
+.principio-story {
+  margin-top: var(--space-6);
+}
+
+/* =========================================================================
+   MÓVIL
+   ========================================================================= */
+@media (max-width: 640px) {
+
+  .principio-mobile-header { display: flex; }
+  .principio-back-floating { display: none; }
+
+  .principio-screen {
+    margin: 0 auto;
+    padding: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-5));
+    border-radius: 0;
+    width: 100%;
+  }
+}

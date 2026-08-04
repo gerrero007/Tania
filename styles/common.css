@@ -453,7 +453,50 @@ img { max-width: 100%; display: block; }
 .back-btn--header { color: var(--color-blue); }
 
 /* -------------------------------------------------------------------------
-   14. UTILIDADES
+   15. BLOQUE HISTORIA (texto + imagen alternos en zigzag)
+   Usado en páginas de detalle tipo "El principio", "El grupo"...
+   ------------------------------------------------------------------------- */
+.story-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+/* Invierte el orden visual (imagen a la izquierda, texto a la derecha)
+   sin cambiar el orden real del HTML (mejor para lectura/accesibilidad) */
+.story-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.story-row__text {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: var(--text-base);
+}
+
+.story-row__img {
+  flex: 1;
+  width: 100%;
+  aspect-ratio: 1.8;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .story-row,
+  .story-row--reverse {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   16. UTILIDADES
    ------------------------------------------------------------------------- */
 .text-center { text-align: center; }
 .mt-1 { margin-top: var(--space-1); } .mt-2 { margin-top: var(--space-2); }

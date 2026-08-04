@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El grupo — Viajes</title>
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="../styles/el-grupo.css">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header grupo-mobile-header">
+    <a href="viajes.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen grupo-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="./viajes.html" class="back-btn back-btn--floating grupo-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>El grupo</h2>
+    </div>
+
+    <!-- Orden real (y orden móvil): p1, p2, p3, img1, p4, img2, p5 -->
+    <div class="grupo-content">
+      <p class="story-row__text grupo-p1">Historias tendremos muchas, pero pocas tan únicas como estas.</p>
+      <p class="story-row__text grupo-p2">No fue perfecto, pero eso fue justo lo que hizo que todos los momentos los recordemos con cariño.</p>
+      <p class="story-row__text grupo-p3">El carrito, la pijamada en casa de Abity o tu cumpleaños siempre quedaran en nuestra memoria.</p>
+      <img class="story-row__img grupo-img1" src="../img/33.jpg" alt="El grupo - recuerdo 1">
+      <p class="story-row__text grupo-p4">Sea como sea, siempre hemos tenido algo en común, siempre participábamos en las mayores locuras.</p>
+      <img class="story-row__img grupo-img2" src="../img/32.jpg" alt="El grupo - recuerdo 2">
+      <p class="story-row__text grupo-p5">Sobre todo si nos teníamos el uno al otro.</p>
+    </div>
+
+  </main>
+
+</body>
+</html>

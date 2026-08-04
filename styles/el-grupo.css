@@ -1,0 +1,65 @@
+/* =========================================================================
+   EL-GRUPO.CSS — Página "El grupo" (dentro de Viajes)
+   Depende de styles/common.css (variables, .screen, .app-header, .back-btn,
+   .screen-title, .story-row__text, .story-row__img)
+   ========================================================================= */
+
+.grupo-screen {
+  width: min(85vw, 1400px);
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-7);
+}
+
+/* En escritorio no se usa el header oscuro, solo la flecha flotante */
+.grupo-mobile-header { display: none; }
+
+/* --- Escritorio: 2 columnas (texto / imágenes), texto en orden real del HTML --- */
+.grupo-content {
+  margin-top: var(--space-6);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  column-gap: var(--space-7);
+  row-gap: var(--space-5);
+  grid-template-areas:
+    "p1   img1"
+    "p2   img1"
+    "p3   img2"
+    "p4   img2"
+    "p5   .";
+}
+
+.grupo-p1 { grid-area: p1; }
+.grupo-p2 { grid-area: p2; }
+.grupo-p3 { grid-area: p3; }
+.grupo-p4 { grid-area: p4; }
+.grupo-p5 { grid-area: p5; }
+
+.grupo-img1 { grid-area: img1; align-self: center; }
+.grupo-img2 { grid-area: img2; align-self: center; }
+
+.grupo-content .story-row__text { margin: 0; }
+
+/* =========================================================================
+   MÓVIL
+   ========================================================================= */
+@media (max-width: 640px) {
+
+  .grupo-mobile-header { display: flex; }
+  .grupo-back-floating { display: none; }
+
+  .grupo-screen {
+    margin: 0 auto;
+    padding: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-5));
+    border-radius: 0;
+    width: 100%;
+  }
+
+  /* Se abandona el grid: los elementos siguen el orden real del HTML
+     (p1, p2, p3, img1, p4, img2, p5), igual que en el boceto móvil */
+  .grupo-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+}
