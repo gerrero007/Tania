@@ -17,39 +17,56 @@
    BAÚL DE LOS RECUERDOS
    ------------------------------------------------------------------------- */
 .chest {
+  display: flex;
   position: relative;
-  max-width: 700px;
+  height: 30vh;
+  max-width: 900px;
   margin: var(--space-7) auto 0;
   background: var(--color-orange);
-  border: 2px solid var(--color-header);
+  border: 3px solid var(--color-header);
   border-radius: var(--radius-lg);
-  padding: 70px var(--space-5) var(--space-6);
+  /* padding-top grande: deja hueco reservado para la ranura de cartas,
+     que va posicionada en absoluto por encima del texto */
+  padding: 112px var(--space-6) var(--space-7);
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .chest__label {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   color: var(--color-text);
   margin: 0;
 }
 
-/* Fila de cartas asomando por la ranura del baúl */
+/* Fila de cartas asomando por la ranura del baúl.
+   - position: absolute + altura FIJA (no depende del contenido)
+   - overflow: visible
+   Con esto el contenedor JAMÁS cambia de tamaño ni de sitio: las cartas que
+   no tienen el ratón encima se quedan totalmente quietas. La carta en hover
+   solo puede crecer hacia ARRIBA (porque sigue "anclada" por abajo a esa
+   altura fija) y sobresale visualmente del baúl en vez de empujar nada. */
 .chest__slot {
   position: absolute;
-  top: 26px;
-  left: var(--space-5);
-  right: var(--space-5);
+  top: 34px;
+  left: var(--space-6);
+  right: var(--space-6);
+  height: 100px;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
-  gap: 3px;
+  overflow: visible;
+  z-index: 2;
 }
 
 .chest-card {
-  flex: 1;
-  min-width: 0;
-  height: 46px;
+  /* Ancho FIJO e IGUAL para las 6, no depende del texto que tenga cada una */
+  flex: 0 0 22%;
+  height: 100%;
   background: var(--color-white);
   border: 2px solid #5a3d22;
   border-bottom: none;
@@ -65,17 +82,27 @@
   font-size: var(--text-xs);
   color: var(--color-text);
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.25;
   cursor: pointer;
   transition: height 0.28s ease, box-shadow 0.2s ease;
 }
 
-/* Al pasar el ratón (o enfocar), la carta se levanta hasta mostrar el nombre entero */
+/* Solape tipo baraja: cada carta (menos la primera) se monta sobre la
+   anterior. Como en HTML/CSS lo que va después se dibuja encima, cada
+   carta tapa ligeramente el borde derecho de la que la precede. */
+.chest-card + .chest-card {
+  margin-left: -8%;
+}
+
+/* Al pasar el ratón (o enfocar), la carta se levanta hasta mostrar el nombre
+   entero. Como el padre tiene altura fija y overflow visible, crecer aquí
+   SOLO empuja el borde superior hacia arriba — las demás cartas no se mueven
+   ni un píxel, y el nombre queda por encima del baúl. */
 .chest-card:hover,
 .chest-card:focus-visible {
-  height: 150px;
-  box-shadow: 0 -6px 14px rgba(43, 43, 43, 0.2);
-  z-index: 2;
+  height: 130px;
+  box-shadow: 0 -6px 14px rgba(43, 43, 43, 0.25);
+  z-index: 5;
 }
 
 /* -------------------------------------------------------------------------
@@ -131,10 +158,10 @@
    MÓVIL
    ========================================================================= */
 @media (max-width: 640px) {
-
+ 
   .cartas-mobile-header { display: flex; }
   .cartas-back-floating { display: none; }
-
+ 
   .cartas-screen {
     margin: 0 auto;
     padding: var(--space-5);
@@ -142,28 +169,76 @@
     border-radius: 0;
     width: 100%;
   }
-
+ 
   .chest {
+    flex-direction: column;
+    height: auto;
     padding: var(--space-5);
   }
-
+ 
+  .chest__label {
+    margin-top: var(--space-5);
+  }
+ 
+  /* Como en el boceto móvil: una sola columna de cartas a ancho completo,
+     apiladas y en orden VISUAL inverso al de escritorio (la última carta
+     del HTML, "H.O.T.E.L", queda arriba del todo). column-reverse consigue
+     esto sin tener que reordenar el HTML ni duplicar contenido. */
   .chest__slot {
-    flex-wrap: wrap;
     position: static;
-    margin-bottom: var(--space-5);
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
   }
-
+ 
+  /* Barras a ancho completo con el título siempre legible entero
+     (nada de altura reducida ni texto cortado, como en el boceto) */
   .chest-card {
-    flex: 1 1 calc(33.333% - 3px);
-    height: 40px;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    min-height: 52px;
+    border-radius: 0;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    white-space: normal;
   }
-
+ 
+  /* La carta que queda arriba del todo visualmente es la ÚLTIMA del HTML
+     (por el column-reverse) → le damos las esquinas redondeadas */
+  .chest-card:last-child {
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  }
+ 
+  /* Ya no hay efecto de "crecer" en móvil (el título ya se ve entero
+     siempre); el hover/focus no debe alterar la altura */
   .chest-card:hover,
   .chest-card:focus-visible {
-    height: 100px;
+    height: auto;
+    box-shadow: none;
   }
-
+ 
   .carta-modal__box {
     padding: var(--space-6) var(--space-4) var(--space-5);
   }
+
+  .chest-card + .chest-card {
+    margin-left: 0;
+  }
+
+  /* 2. Quita el borde superior duplicado entre tarjetas apiladas y añade bordes inferiores */
+  .chest-card {
+    border-bottom: 2px solid #5a3d22;
+  }
+  
+  .chest-card:not(:last-child) {
+    border-top: none;
+  }
 }
+
+
+ 
