@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El reinicio — Viajes</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/el-reinicio.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header reinicio-mobile-header">
+    <a href="./viajes.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen reinicio-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="./viajes.html" class="back-btn back-btn--floating reinicio-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>El reinicio</h2>
+    </div>
+
+    <p class="reinicio-intro">29 días, un vacío en nuestra relación que rellenó muchos agujeros.</p>
+
+    <div class="reinicio-story">
+
+      <div class="story-row">
+        <p class="story-row__text">No sé como describir lo que sentí todo ese tiempo, faltaba una gran parte de mí y no sabia como recuperarla.</p>
+        <img class="story-row__img" src="../img/10.jpg" alt="El reinicio - recuerdo 1">
+      </div>
+
+      <div class="story-row story-row--reverse">
+        <p class="story-row__text">Por eso decidimos que ese no podía ser el final. Nos enfrentábamos a un futuro incierto otra vez, sin saber si era correcto, pero con mas ganas que nunca.</p>
+        <img class="story-row__img" src="../img/4.jpg" alt="El reinicio - recuerdo 2">
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

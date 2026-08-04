@@ -1,0 +1,39 @@
+/* =========================================================================
+   CELEBRACIONES.CSS — Página "Celebraciones"
+   Depende de styles/common.css (variables, .screen, .app-header, .back-btn,
+   .screen-title, .story-row, .cele-*)
+   ========================================================================= */
+
+.cele-screen {
+  width: min(85vw, 1400px);
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-7);
+}
+
+/* En escritorio no se usa el header oscuro, solo la flecha flotante */
+.cele-mobile-header { display: none; }
+
+.cele-entry:first-of-type {
+  margin-top: var(--space-6);
+}
+
+.cele-entry--last {
+  margin-bottom: 0;
+}
+
+/* =========================================================================
+   MÓVIL
+   ========================================================================= */
+@media (max-width: 640px) {
+
+  .cele-mobile-header { display: flex; }
+  .cele-back-floating { display: none; }
+
+  .cele-screen {
+    margin: 0 auto;
+    padding: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-5));
+    border-radius: 0;
+    width: 100%;
+  }
+}

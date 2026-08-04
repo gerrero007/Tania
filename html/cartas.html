@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartas — Notas de relación</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/cartas.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header cartas-mobile-header">
+    <a href="../index.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen cartas-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="../index.html" class="back-btn back-btn--floating cartas-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>Cartas</h2>
+      <p>💙 En este cajón se almacenan los regalos más preciosos que nos hemos hecho. Todos escritos desde el fondo de nuestro corazón. 💙</p>
+    </div>
+
+    <!-- Baúl con las cartas asomando -->
+    <div class="chest">
+      <div class="chest__slot">
+        <a href="#carta-para-esa-persona" class="chest-card">Para esa persona</a>
+        <a href="#carta-una-vuelta-al-sol" class="chest-card">Una vuelta al sol contigo</a>
+        <a href="#carta-29-dias" class="chest-card">29 días</a>
+        <a href="#carta-nena" class="chest-card">Nena</a>
+        <a href="#carta-demostracion-amor" class="chest-card">Demostración del amor</a>
+        <a href="#carta-hotel" class="chest-card">H.O.T.E.L</a>
+      </div>
+      <p class="chest__label">Baúl de los recuerdos</p>
+    </div>
+
+  </main>
+
+  <!-- Modales de cada carta (técnica CSS puro con :target, sin JS) -->
+
+  <div id="carta-para-esa-persona" class="carta-modal">
+    <div class="carta-modal__box">
+      <a href="#" class="back-btn back-btn--floating carta-modal__close" aria-label="Cerrar carta">
+        <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <h3 class="carta-modal__title">Para esa persona</h3>
+      <p class="carta-modal__text">Aquí irá el contenido de la carta.</p>
+    </div>
+  </div>
+
+  <div id="carta-una-vuelta-al-sol" class="carta-modal">
+    <div class="carta-modal__box">
+      <a href="#" class="back-btn back-btn--floating carta-modal__close" aria-label="Cerrar carta">
+        <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <h3 class="carta-modal__title">Una vuelta al sol contigo</h3>
+      <p class="carta-modal__text">Aquí irá el contenido de la carta.</p>
+    </div>
+  </div>
+
+  <div id="carta-29-dias" class="carta-modal">
+    <div class="carta-modal__box">
+      <a href="#" class="back-btn back-btn--floating carta-modal__close" aria-label="Cerrar carta">
+        <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <h3 class="carta-modal__title">29 días</h3>
+      <p class="carta-modal__text">Aquí irá el contenido de la carta.</p>
+    </div>
+  </div>
+
+  <div id="carta-nena" class="carta-modal">
+    <div class="carta-modal__box">
+      <a href="#" class="back-btn back-btn--floating carta-modal__close" aria-label="Cerrar carta">
+        <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <h3 class="carta-modal__title">Nena</h3>
+      <p class="carta-modal__text">Aquí irá el contenido de la carta.</p>
+    </div>
+  </div>
+
+  <div id="carta-demostracion-amor" class="carta-modal">
+    <div class="carta-modal__box">
+      <a href="#" class="back-btn back-btn--floating carta-modal__close" aria-label="Cerrar carta">
+        <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <h3 class="carta-modal__title">Demostración del amor</h3>
+      <p class="carta-modal__text">Aquí irá el contenido de la carta.</p>
+    </div>
+  </div>
+
+  <div id="carta-hotel" class="carta-modal">
+    <div class="carta-modal__box">
+      <a href="#" class="back-btn back-btn--floating carta-modal__close" aria-label="Cerrar carta">
+        <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <h3 class="carta-modal__title">H.O.T.E.L</h3>
+      <p class="carta-modal__text">Aquí irá el contenido de la carta.</p>
+    </div>
+  </div>
+
+</body>
+</html>

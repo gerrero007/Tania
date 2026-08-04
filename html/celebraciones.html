@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebraciones — Notas de relación</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/celebraciones.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header cele-mobile-header">
+    <a href="../index.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen cele-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="../index.html" class="back-btn back-btn--floating cele-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>Celebraciones</h2>
+      <p>💙 Para recordar los mejores momentos en fechas muy importantes 💙</p>
+    </div>
+
+    <!-- 1) 19 de febrero de 2023 — Estructura base -->
+    <section class="cele-entry">
+      <h3 class="cele-date">19 de febrero de 2023</h3>
+      <p class="cele-subtitle">Estructura base</p>
+
+      <div class="story-row">
+        <p class="story-row__text">Una pijamada de tres amigos, pudo empezar una nueva historia completamente nueva.</p>
+        <img class="story-row__img" src="../img/18.jpg" alt="19 de febrero de 2023">
+      </div>
+    </section>
+
+    <!-- 2) 21 de febrero de 2023 — Creación del movimiento (imagen izq. + 3 textos) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de febrero de 2023</h3>
+      <p class="cele-subtitle">Creación del movimiento</p>
+
+      <div class="cele-grid">
+        <p class="cele-text cele-grid__p1">Parecía una fantasía, no sabíamos lo que iba a pasar el siguiente día o la siguiente quedada.</p>
+        <p class="cele-text cele-grid__p2">Poco a poco nos íbamos conociendo cada vez más y empezaba a ver la persona tan increíble que eras.</p>
+        <img class="cele-grid__media" src="../img/27.jpg" alt="21 de febrero de 2023">
+        <p class="cele-text cele-grid__p3">Desde aquel día, no he parado de pensar en ti ni un solo día, dándome cuenta cada día más de lo mucho que te quiero.</p>
+      </div>
+    </section>
+
+    <!-- 3) 21 de marzo de 2023 — Inicio del deseo (solo texto, alineación alterna) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de marzo de 2023</h3>
+      <p class="cele-subtitle">Inicio del deseo</p>
+
+      <p class="cele-text cele-text--left">Celebramos el primer mes saliendo en nuestra primera cita.</p>
+      <p class="cele-text cele-text--right">Fue una velada increíble, con todos sus detalles... Hasta por lo del vaso caído.</p>
+      <p class="cele-text cele-text--left">A pesar de no tener fotos o videos de aquel día, siempre quedara grabado en mi memoria.</p>
+      <p class="cele-text cele-text--right">Porque aquel día sentí mil cosas por ti.</p>
+    </section>
+
+    <!-- 4) 21 de febrero de 2024 — Primera vuelta al sol (3 textos + imagen der.) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de febrero de 2024</h3>
+      <p class="cele-subtitle">Primera vuelta al sol</p>
+
+      <div class="cele-grid cele-grid--reverse">
+        <p class="cele-text cele-grid__p1">Empezamos a recordar los primeros meses, sin saber que solo estábamos empezando.</p>
+        <p class="cele-text cele-grid__p2">Sentía que teniéndote a ti, era la persona mas feliz en el mundo.</p>
+        <img class="cele-grid__media" src="../img/26.jpg" alt="21 de febrero de 2024">
+        <p class="cele-text cele-grid__p3">Y lucharía todo lo que fuera posible para no perder lo que ya habíamos empezado.</p>
+      </div>
+    </section>
+
+    <!-- 5) 21 de agosto de 2024 — Lucha por amor (texto / imagen ancho completo / texto) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de agosto de 2024</h3>
+      <p class="cele-subtitle">Lucha por amor</p>
+
+      <p class="cele-text cele-text--left">El mejor sentimiento fue volver a tenerte, mas feliz y preciosa como nunca te había visto.</p>
+      <img class="cele-media" src="../img/4.jpg" alt="21 de agosto de 2024">
+      <p class="cele-text cele-text--right">Este mes celebramos todo lo que habíamos conseguido mejorar, empezando a escribir nuestra vida por el futuro.</p>
+    </section>
+
+    <!-- 6) 21 de febrero de 2025 — Expectativas futuras (texto centrado + caption + imagen) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de febrero de 2025</h3>
+      <p class="cele-subtitle">Expectativas futuras</p>
+
+      <p class="cele-text">Seguíamos creyendo en nosotros como el primer día, compartiendo regalos que nunca olvidaremos</p>
+      <p class="cele-caption">(Como esos 51,27)</p>
+      <img class="cele-media" src="../img/34.jpg" alt="21 de febrero de 2025">
+    </section>
+
+    <!-- 7) 21 de agosto de 2025 — Vida conjunta (zigzag x2) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de agosto de 2025</h3>
+      <p class="cele-subtitle">Vida conjunta</p>
+
+      <div class="story-row">
+        <p class="story-row__text">Celebramos los dos años y medio en un apartamento al lado del mar.</p>
+        <img class="story-row__img" src="../img/25.jpg" alt="21 de agosto de 2025 - recuerdo 1">
+      </div>
+
+      <div class="story-row story-row--reverse">
+        <p class="story-row__text">Estar tumbados en la arena por la noche contigo fue cumplir un sueño.</p>
+        <img class="story-row__img" src="../img/7.jpg" alt="21 de agosto de 2025 - recuerdo 2">
+      </div>
+    </section>
+
+    <!-- 8) 21 de febrero de 2026 — Vida perfecta (zigzag x2) -->
+    <section class="cele-entry">
+      <h3 class="cele-date">21 de febrero de 2026</h3>
+      <p class="cele-subtitle">Vida perfecta</p>
+
+      <div class="story-row">
+        <p class="story-row__text">La experiencia del hotel fue algo que nunca olvidaré.</p>
+        <img class="story-row__img" src="../img/35.jpg" alt="21 de febrero de 2026 - recuerdo 1">
+      </div>
+
+      <div class="story-row story-row--reverse">
+        <p class="story-row__text">Se sintió como vivir una fantasía, con la persona que más quiero en el mundo.</p>
+        <img class="story-row__img" src="../img/24.jpg" alt="21 de febrero de 2026 - recuerdo 2">
+      </div>
+    </section>
+
+    <!-- 9) Más futuro... — Vida contigo -->
+    <section class="cele-entry cele-entry--last">
+      <h3 class="cele-date">Más futuro...</h3>
+      <p class="cele-subtitle">Vida contigo</p>
+
+      <div class="story-row">
+        <p class="story-row__text">Nena, te sigo viendo con los ojos de cuando probé tus labios por primera vez. Unos ojos llenos de esperanza e incerteza por todo lo que veía dentro tuya. Hoy, lo único que ha cambiado, és la fuerza con la que late mi corazón por ti.</p>
+        <img class="story-row__img" src="../img/23.jpg" alt="Más futuro">
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

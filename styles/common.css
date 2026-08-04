@@ -496,7 +496,126 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------------------------------------
-   16. UTILIDADES
+   16. ENTRADAS DE CELEBRACIÓN (fecha + subtítulo + contenido variable)
+   Usado en la página Celebraciones: cada hito puede llevar texto suelto,
+   una imagen a ancho completo, o un bloque "imagen + 3 textos" en grid.
+   ------------------------------------------------------------------------- */
+.cele-entry {
+  margin-bottom: var(--space-7);
+}
+
+.cele-date {
+  text-align: center;
+  color: var(--color-text);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-1);
+}
+
+.cele-subtitle {
+  text-align: center;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-6);
+}
+
+/* Párrafo de contenido dentro de una entrada — centrado por defecto */
+.cele-text {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  max-width: 520px;
+  margin: 0 auto var(--space-5);
+}
+
+.cele-text--left  { text-align: left;  margin-left: 0; }
+.cele-text--right { text-align: right; margin-right: 0; }
+
+/* Pequeña acotación/caption sobre una imagen */
+.cele-caption {
+  text-align: center;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--text-xs);
+  opacity: 0.75;
+  margin: 0 0 var(--space-2);
+}
+
+/* Imagen suelta a ancho completo (centrada dentro de la entrada) */
+.cele-media {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto var(--space-5);
+  aspect-ratio: 1.9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* Bloque: 1 imagen (a un lado, altura completa) + 3 párrafos apilados */
+.cele-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  column-gap: var(--space-6);
+  row-gap: var(--space-7);
+  align-items: center;
+  grid-template-areas:
+    "media p1"
+    "media p2"
+    "media p3";
+  margin-bottom: var(--space-5);
+}
+
+/* Variante con la imagen al lado contrario */
+.cele-grid--reverse {
+  grid-template-areas:
+    "p1 media"
+    "p2 media"
+    "p3 media";
+}
+
+.cele-grid__media {
+  grid-area: media;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.cele-grid__p1 { grid-area: p1; }
+.cele-grid__p2 { grid-area: p2; }
+.cele-grid__p3 { grid-area: p3; }
+
+.cele-grid .cele-text { margin: 0; max-width: none; }
+
+@media (max-width: 640px) {
+  .cele-text--left,
+  .cele-text--right {
+    text-align: center;
+    margin: 0 auto var(--space-5);
+  }
+
+  .cele-grid,
+  .cele-grid--reverse {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .cele-grid__media {
+    aspect-ratio: 1.6;
+    height: auto;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   17. UTILIDADES
    ------------------------------------------------------------------------- */
 .text-center { text-align: center; }
 .mt-1 { margin-top: var(--space-1); } .mt-2 { margin-top: var(--space-2); }

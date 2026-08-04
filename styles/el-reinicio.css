@@ -1,0 +1,50 @@
+/* =========================================================================
+   EL-REINICIO.CSS — Página "El reinicio" (dentro de Viajes)
+   Depende de styles/common.css (variables, .screen, .app-header, .back-btn,
+   .screen-title, .story-row)
+   ========================================================================= */
+
+.reinicio-screen {
+  width: min(85vw, 1400px);
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-7);
+}
+
+/* En escritorio no se usa el header oscuro, solo la flecha flotante */
+.reinicio-mobile-header { display: none; }
+
+/* --- Párrafo introductorio, a todo el ancho --- */
+.reinicio-intro {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+}
+
+.reinicio-story {
+  margin-top: var(--space-2);
+}
+
+/* =========================================================================
+   MÓVIL
+   ========================================================================= */
+@media (max-width: 640px) {
+
+  .reinicio-mobile-header { display: flex; }
+  .reinicio-back-floating { display: none; }
+
+  .reinicio-screen {
+    margin: 0 auto;
+    padding: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-5));
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .reinicio-intro {
+    max-width: 100%;
+  }
+}

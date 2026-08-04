@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La vida — Viajes</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/la-vida.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header lavida-mobile-header">
+    <a href="./viajes.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen lavida-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="./viajes.html" class="back-btn back-btn--floating lavida-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>La vida</h2>
+    </div>
+
+    <!-- Orden real: p1, p2, img1 (única visible en móvil), p3, p4, img2 (solo escritorio) -->
+    <div class="lavida-content">
+      <p class="story-row__text lavida-p1">Este viaje todavía no ha acabado. Aunque este bien recordar todas esas historias, tenemos que mirar hacia adelante.</p>
+      <p class="story-row__text lavida-p2">Con yate o sin, juntos podremos resolver cualquier problema que se nos plantee.</p>
+
+      <img class="story-row__img lavida-img1" src="../img/2.jpg" alt="La vida - recuerdo 1">
+
+      <p class="story-row__text lavida-p3">No es persistencia, sino amor.</p>
+      <p class="story-row__text lavida-p4">Pero sea lo que sea, pase lo que pase, sera contigo y junto a ti. Siempre.</p>
+
+      <img class="story-row__img lavida-img2" src="../img/13.jpg" alt="La vida - recuerdo 2">
+    </div>
+
+  </main>
+
+</body>
+</html>
