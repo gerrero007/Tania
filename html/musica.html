@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Música — Notas de relación</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/musica.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header musica-mobile-header">
+    <a href="../index.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen musica-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="../index.html" class="back-btn back-btn--floating musica-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>Música</h2>
+      <p>💙 Algo muy importante para los. Es importante recordar que por muchas diferencias que tengamos, lo mejor es siempre compartirlo y disfrutarlo juntos. 💙</p>
+    </div>
+
+    <!-- Orden real (y orden móvil): img1, p1, img2, p2, p3 -->
+    <div class="musica-content">
+      <button type="button" class="musica-media musica-img1" data-song="1" aria-label="Reproducir canción 1">
+        <img class="musica-media__img" src="../img/LP.jpg" alt="Canción 1">
+      </button>
+
+      <p class="story-row__text musica-p1">Puede que suene mas fuerte, pero siempre expresa sus sentimientos más profundo en las canciones mas tranquilas.</p>
+
+      <button type="button" class="musica-media musica-img2" data-song="2" aria-label="Reproducir canción 2">
+        <img class="musica-media__img" src="../img/LI.jpg" alt="Canción 2">
+      </button>
+
+      <p class="story-row__text musica-p2">Más tierna, pero refleja fuerza interior y libertad para vivir la vida a su gusto.</p>
+
+      <p class="story-row__text musica-p3">Muy diferentes, pero se compaginan para ayudarse en sus debilidades, luchar juntos por lo que quieren y seguir adelante. En el mismo equipo.</p>
+    </div>
+
+  </main>
+
+</body>
+</html>

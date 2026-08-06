@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álbum — Notas de relación</title>
+  <link rel="stylesheet" href="../styles/common.css?v=1.1">
+  <link rel="stylesheet" href="../styles/album.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header fijo, solo visible en móvil: flecha atrás -> índice -->
+  <header class="app-header album-mobile-header">
+    <a href="../index.html" class="back-btn back-btn--header" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="screen album-screen">
+
+    <!-- Flecha atrás flotante, solo visible en escritorio -->
+    <a href="../index.html" class="back-btn back-btn--floating album-back-floating" aria-label="Volver al índice">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <div class="screen-title">
+      <h2>Álbum</h2>
+      <p>💙 Aquí tenemos las mejores fotos, para inmortalizar parte de nuestra historia. 💙</p>
+    </div>
+
+    <!-- Rejilla de recuerdos: cada tarjeta = 1 imagen + 1 fecha.
+         Para añadir más fotos, copia y pega un bloque ".album-card" más
+         dentro de ".album-grid" (no hace falta tocar el CSS). -->
+    <div class="album-grid">
+      <div class="album-card">
+        <a href="#foto-1" class="album-card__link">
+          <img class="album-card__img" src="../img/15.jpg" alt="Recuerdo 1">
+        </a>
+        <span class="album-card__date">04/06/2022</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-2" class="album-card__link">
+          <img class="album-card__img" src="../img/16.jpg" alt="Recuerdo 2">
+        </a>
+        <span class="album-card__date">20/08/2022</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-3" class="album-card__link">
+          <img class="album-card__img" src="../img/17.jpg" alt="Recuerdo 4">
+        </a>
+        <span class="album-card__date">23/12/2022</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-4" class="album-card__link">
+          <img class="album-card__img" src="../img/18.jpg" alt="Recuerdo 3">
+        </a>
+        <span class="album-card__date">10/01/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-5" class="album-card__link">
+          <img class="album-card__img" src="../img/29.jpeg" alt="Recuerdo 10">
+        </a>
+        <span class="album-card__date">10/02/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-6" class="album-card__link">
+          <img class="album-card__img" src="../img/30.jpg" alt="Recuerdo 5">
+        </a>
+        <span class="album-card__date">18/02/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-7" class="album-card__link">
+          <img class="album-card__img" src="../img/14.jpg" alt="Recuerdo 6">
+        </a>
+        <span class="album-card__date">18/02/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-8" class="album-card__link">
+          <img class="album-card__img" src="../img/27.jpg" alt="Recuerdo 7">
+        </a>
+        <span class="album-card__date">19/02/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-9" class="album-card__link">
+          <img class="album-card__img" src="../img/1.jpg" alt="Recuerdo 12">
+        </a>
+        <span class="album-card__date">16/03/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-10" class="album-card__link">
+          <img class="album-card__img" src="../img/32.jpg" alt="Recuerdo 9">
+        </a>
+        <span class="album-card__date">17/03/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-11" class="album-card__link">
+          <img class="album-card__img" src="../img/31.jpg" alt="Recuerdo 34">
+        </a>
+        <span class="album-card__date">30/04/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-12" class="album-card__link">
+          <img class="album-card__img" src="../img/19.jpg" alt="Recuerdo 11">
+        </a>
+        <span class="album-card__date">02/05/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-13" class="album-card__link">
+          <img class="album-card__img" src="../img/33.jpg" alt="Recuerdo 8">
+        </a>
+        <span class="album-card__date">25/05/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-14" class="album-card__link">
+          <img class="album-card__img" src="../img/20.jpg" alt="Recuerdo 33">
+        </a>
+        <span class="album-card__date">21/07/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-15" class="album-card__link">
+          <img class="album-card__img" src="../img/3.jpg" alt="Recuerdo 13">
+        </a>
+        <span class="album-card__date">31/10/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-16" class="album-card__link">
+          <img class="album-card__img" src="../img/11.jpg" alt="Recuerdo 14">
+        </a>
+        <span class="album-card__date">09/12/2023</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-17" class="album-card__link">
+          <img class="album-card__img" src="../img/26.jpg" alt="Recuerdo 15">
+        </a>
+        <span class="album-card__date">23/02/2024</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-18" class="album-card__link">
+          <img class="album-card__img" src="../img/28.jpg" alt="Recuerdo 17">
+        </a>
+        <span class="album-card__date">23/02/2024</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-19" class="album-card__link">
+          <img class="album-card__img" src="../img/4.jpg" alt="Recuerdo 16">
+        </a>
+        <span class="album-card__date">10/07/2024</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-20" class="album-card__link">
+          <img class="album-card__img" src="../img/21.jpg" alt="Recuerdo 18">
+        </a>
+        <span class="album-card__date">08/09/2024</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-21" class="album-card__link">
+          <img class="album-card__img" src="../img/22.jpg" alt="Recuerdo 19">
+        </a>
+        <span class="album-card__date">28/09/2024</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-22" class="album-card__link">
+          <img class="album-card__img" src="../img/10.jpg" alt="Recuerdo 30">
+        </a>
+        <span class="album-card__date">21/12/2024</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-23" class="album-card__link">
+          <img class="album-card__img" src="../img/34.jpg" alt="Recuerdo 32">
+        </a>
+        <span class="album-card__date">21/02/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-24" class="album-card__link">
+          <img class="album-card__img" src="../img/12.jpg" alt="Recuerdo 20">
+        </a>
+        <span class="album-card__date">23/02/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-25" class="album-card__link">
+          <img class="album-card__img" src="../img/5.jpg" alt="Recuerdo 21">
+        </a>
+        <span class="album-card__date">28/05/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-26" class="album-card__link">
+          <img class="album-card__img" src="../img/6.jpg" alt="Recuerdo 22">
+        </a>
+        <span class="album-card__date">10/08/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-27" class="album-card__link">
+          <img class="album-card__img" src="../img/25.jpg" alt="Recuerdo 23">
+        </a>
+        <span class="album-card__date">21/08/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-28" class="album-card__link">
+          <img class="album-card__img" src="../img/7.jpg" alt="Recuerdo 24">
+        </a>
+        <span class="album-card__date">21/08/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-29" class="album-card__link">
+          <img class="album-card__img" src="../img/8.jpg" alt="Recuerdo 25">
+        </a>
+        <span class="album-card__date">04/09/2025</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-30" class="album-card__link">
+          <img class="album-card__img" src="../img/24.jpg" alt="Recuerdo 26">
+        </a>
+        <span class="album-card__date">21/02/2026</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-31" class="album-card__link">
+          <img class="album-card__img" src="../img/35.jpg" alt="Recuerdo 35">
+        </a>
+        <span class="album-card__date">21/02/2026</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-32" class="album-card__link">
+          <img class="album-card__img" src="../img/13.jpg" alt="Recuerdo 31">
+        </a>
+        <span class="album-card__date">22/05/2026</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-33" class="album-card__link">
+          <img class="album-card__img" src="../img/9.jpg" alt="Recuerdo 27">
+        </a>
+        <span class="album-card__date">22/05/2026</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-34" class="album-card__link">
+          <img class="album-card__img" src="../img/2.jpg" alt="Recuerdo 28">
+        </a>
+        <span class="album-card__date">14/06/2026</span>
+      </div>
+      <div class="album-card">
+        <a href="#foto-35" class="album-card__link">
+          <img class="album-card__img" src="../img/23.jpg" alt="Recuerdo 29">
+        </a>
+        <span class="album-card__date">14/06/2026</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Visor de fotos a pantalla completa (técnica :target, sin JavaScript) -->
+  <div id="foto-1" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/15.jpg" alt="Recuerdo 1">
+    </a>
+  </div>
+
+  <div id="foto-2" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/16.jpg" alt="Recuerdo 2">
+    </a>
+  </div>
+
+  <div id="foto-3" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/17.jpg" alt="Recuerdo 4">
+    </a>
+  </div>
+
+  <div id="foto-4" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/18.jpg" alt="Recuerdo 3">
+    </a>
+  </div>
+
+  <div id="foto-5" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/29.jpeg" alt="Recuerdo 10">
+    </a>
+  </div>
+
+  <div id="foto-6" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/30.jpg" alt="Recuerdo 5">
+    </a>
+  </div>
+
+  <div id="foto-7" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/14.jpg" alt="Recuerdo 6">
+    </a>
+  </div>
+
+  <div id="foto-8" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/27.jpg" alt="Recuerdo 7">
+    </a>
+  </div>
+
+  <div id="foto-9" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/1.jpg" alt="Recuerdo 12">
+    </a>
+  </div>
+
+  <div id="foto-10" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/32.jpg" alt="Recuerdo 9">
+    </a>
+  </div>
+
+  <div id="foto-11" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/31.jpg" alt="Recuerdo 34">
+    </a>
+  </div>
+
+  <div id="foto-12" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/19.jpg" alt="Recuerdo 11">
+    </a>
+  </div>
+
+  <div id="foto-13" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/33.jpg" alt="Recuerdo 8">
+    </a>
+  </div>
+
+  <div id="foto-14" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/20.jpg" alt="Recuerdo 33">
+    </a>
+  </div>
+
+  <div id="foto-15" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/3.jpg" alt="Recuerdo 13">
+    </a>
+  </div>
+
+  <div id="foto-16" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/11.jpg" alt="Recuerdo 14">
+    </a>
+  </div>
+
+  <div id="foto-17" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/26.jpg" alt="Recuerdo 15">
+    </a>
+  </div>
+
+  <div id="foto-18" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/28.jpg" alt="Recuerdo 17">
+    </a>
+  </div>
+
+  <div id="foto-19" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/4.jpg" alt="Recuerdo 16">
+    </a>
+  </div>
+
+  <div id="foto-20" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/21.jpg" alt="Recuerdo 18">
+    </a>
+  </div>
+
+  <div id="foto-21" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/22.jpg" alt="Recuerdo 19">
+    </a>
+  </div>
+
+  <div id="foto-22" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/10.jpg" alt="Recuerdo 30">
+    </a>
+  </div>
+
+  <div id="foto-23" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/34.jpg" alt="Recuerdo 32">
+    </a>
+  </div>
+
+  <div id="foto-24" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/12.jpg" alt="Recuerdo 20">
+    </a>
+  </div>
+
+  <div id="foto-25" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/5.jpg" alt="Recuerdo 21">
+    </a>
+  </div>
+
+  <div id="foto-26" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/6.jpg" alt="Recuerdo 22">
+    </a>
+  </div>
+
+  <div id="foto-27" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/25.jpg" alt="Recuerdo 23">
+    </a>
+  </div>
+
+  <div id="foto-28" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/7.jpg" alt="Recuerdo 24">
+    </a>
+  </div>
+
+  <div id="foto-29" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/8.jpg" alt="Recuerdo 25">
+    </a>
+  </div>
+
+  <div id="foto-30" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/24.jpg" alt="Recuerdo 26">
+    </a>
+  </div>
+
+  <div id="foto-31" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/35.jpg" alt="Recuerdo 35">
+    </a>
+  </div>
+
+  <div id="foto-32" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/13.jpg" alt="Recuerdo 31">
+    </a>
+  </div>
+
+  <div id="foto-33" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/9.jpg" alt="Recuerdo 27">
+    </a>
+  </div>
+
+  <div id="foto-34" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/2.jpg" alt="Recuerdo 28">
+    </a>
+  </div>
+
+  <div id="foto-35" class="photo-lightbox">
+    <a href="#" class="back-btn back-btn--floating photo-lightbox__close" aria-label="Cerrar foto">
+      <svg class="back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#" class="photo-lightbox__img-link" aria-label="Cerrar foto">
+      <img class="photo-lightbox__img" src="../img/23.jpg" alt="Recuerdo 29">
+    </a>
+  </div>
+
+
+</body>
+</html>

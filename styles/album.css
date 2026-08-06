@@ -1,0 +1,132 @@
+/* =========================================================================
+   ALBUM.CSS — Página "Álbum"
+   Depende de styles/common.css (variables, .screen, .app-header, .back-btn,
+   .screen-title)
+   ========================================================================= */
+
+.album-screen {
+  width: min(85vw, 1400px);
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-7);
+}
+
+/* En escritorio no se usa el header oscuro, solo la flecha flotante */
+.album-mobile-header { display: none; }
+
+/* --- Rejilla de recuerdos --- */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+/* --- Tarjeta: imagen arriba + fecha abajo, en espacios separados --- */
+.album-card {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--color-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+/* La imagen SOLO ocupa su propio hueco (cuadrado), nunca el de la fecha */
+.album-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.05;
+  object-fit: cover;
+  transition: opacity 0.15s ease;
+}
+
+.album-card__link {
+  display: block;
+  line-height: 0;
+}
+
+.album-card__link:hover .album-card__img,
+.album-card__link:focus-visible .album-card__img {
+  opacity: 0.85;
+}
+
+/* La fecha vive en su propia franja, separada de la imagen */
+.album-card__date {
+  display: block;
+  border-top: 1.5px solid var(--color-white);
+  padding: var(--space-1) var(--space-2);
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  color: var(--color-text-onblue);
+}
+
+/* -------------------------------------------------------------------------
+   VISOR DE FOTO A PANTALLA COMPLETA (técnica :target — sin JavaScript)
+   ------------------------------------------------------------------------- */
+.photo-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: rgba(26, 26, 26, 0.85);
+}
+
+.photo-lightbox:target {
+  display: flex;
+}
+
+.photo-lightbox__img {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  /* object-fit: contain para verla completa y con su resolución/proporción
+     real, sin recortar (a diferencia de la miniatura, que sí usa cover) */
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+/* La propia foto también cierra el visor al hacer click sobre ella
+   (además de la flecha de la esquina) */
+.photo-lightbox__img-link {
+  display: block;
+  line-height: 0;
+  cursor: zoom-out;
+}
+
+.photo-lightbox__close {
+  position: fixed;
+  top: var(--space-5);
+  left: var(--space-5);
+}
+
+/* =========================================================================
+   MÓVIL
+   ========================================================================= */
+@media (max-width: 640px) {
+
+  .album-mobile-header { display: flex; }
+  .album-back-floating { display: none; }
+
+  .album-screen {
+    margin: 0 auto;
+    padding: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-5));
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .album-card__img {
+    aspect-ratio: 1.6;
+  }
+}

@@ -1,0 +1,106 @@
+/* =========================================================================
+   MUSICA.CSS — Página "Música"
+   Depende de styles/common.css (variables, .screen, .app-header, .back-btn,
+   .screen-title, .story-row__text)
+   ========================================================================= */
+
+.musica-screen {
+  width: min(85vw, 1400px);
+  margin: var(--space-6) auto;
+  padding: var(--space-6) var(--space-7);
+}
+
+/* En escritorio no se usa el header oscuro, solo la flecha flotante */
+.musica-mobile-header { display: none; }
+
+/* --- Escritorio: imagen / (2 textos en fila + 1 texto ancho completo) / imagen --- */
+.musica-content {
+  margin-top: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.4fr 1fr;
+  column-gap: var(--space-6);
+  row-gap: var(--space-6);
+  grid-template-areas:
+    "img1 p1   p2   img2"
+    "img1 p3   p3   img2";
+  align-items: start;
+}
+
+.musica-p1 { grid-area: p1; }
+.musica-p2 { grid-area: p2; }
+.musica-p3 { grid-area: p3; align-self: center; }
+
+.musica-content .story-row__text { margin: 0; }
+
+.musica-img1 { grid-area: img1; }
+.musica-img2 { grid-area: img2; }
+
+/* Tamaño FIJO e IGUAL para las dos, sin importar la resolución real de
+   cada imagen: se define por aspect-ratio (ancho ya viene dado por la
+   columna del grid, que es igual para img1 e img2), y object-fit: cover
+   recorta la foto para rellenar ese hueco sin deformarla. */
+.musica-media {
+  all: unset;
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.42;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.musica-media__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* Feedback visual de que la imagen es clicable (la lógica de reproducción
+   la añade JS aparte) */
+.musica-media:hover .musica-media__img,
+.musica-media:focus-visible .musica-media__img {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.musica-media:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+/* =========================================================================
+   MÓVIL
+   ========================================================================= */
+@media (max-width: 640px) {
+ 
+  .musica-mobile-header { display: flex; }
+  .musica-back-floating { display: none; }
+ 
+  .musica-screen {
+    margin: 0 auto;
+    padding: var(--space-5);
+    padding-top: calc(var(--header-height) + var(--space-5));
+    border-radius: 0;
+    width: 100%;
+  }
+ 
+  /* Se abandona el grid: sigue el orden real del HTML
+     (img1, p1, img2, p2, p3), igual que en el boceto móvil */
+  .musica-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+ 
+  .musica-media {
+    position: static;
+    aspect-ratio: 1.7;
+  }
+ 
+
+  .musica-media__img {
+    object-position: top ;
+  }
+}
